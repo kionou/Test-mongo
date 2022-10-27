@@ -4,6 +4,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', dataUser.GetUser);
+router.get('/login', dataUser.LogintUser);
 router.post('/', dataUser.PostUser);
 
 
