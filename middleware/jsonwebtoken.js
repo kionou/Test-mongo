@@ -16,9 +16,29 @@ const jsonwt = class{
             const decodedToken = jwt.verify(token, 'cHJvamV0IGRfZWR1Y2F0aW9u');
             console.log(decodedToken) 
             return decodedToken
-        } catch (error) {
+        } catch (error) { 
             console.log('Token non valide');
         }
+    }
+
+    static requireAuth=(req,res,next)=>{
+        const token = req.cookies.jwt
+            
+        if (token) {
+            jwt.verify(token, 'cHJvamV0IGRfZWR1Y2F0aW9u',(err,decodedToken) =>{
+                if (err) {
+                    console.log(err.message);
+                    res.redirect('/users/login')
+                    
+                } else {
+                    console.log("decodedToken",decodedToken);
+                    next()
+                }
+            });
+        } else {
+            res.redirect('/users/login')
+        }
+        
     }
 }
 

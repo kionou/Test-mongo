@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <% if (user ){ %>
+    <form action="/users/editer"  method="post" >
+       <h1>Modifier les informations</h1>
+        <input type="text" name="nom" placeholder='Nom'  value="<%= user.nom %>"/>
+        <input type="text" name="prenom" placeholder='Prenom' value="<%= user.prenom %>" />
+        <input type="email"  name="email" placeholder='Adresse Email'value="<%= user.email %>" />
+        <input type="tel" name="numero" id="" placeholder="Numero"value="<%= user.numero %>" />
+        <input type="hidden" name="password" value="<%= user.password %>"> 
+        <input type="hidden" name="id" value="<%= user._id %>"> 
+        <div class="btn">
+        <button>Enregistrer</button>
+        </div>
+        
+    </form>
+    <% } %>
+</div>
+</body>
+</html>

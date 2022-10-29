@@ -50,3 +50,34 @@ button{
   color: #fff;
   cursor: pointer;
 }
+
+
+.fa-trash{
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: red;
+  border: 1px solid red;
+}
+
+
+.fa-trash:hover{
+  background-color: white;
+  color: red;
+  
+}
+.fa-pen{
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: #2288ff;
+  border: 1px solid #2288ff;
+}
+.fa-pen:hover{
+  background-color: white;
+  color: #2288ff;
+}
